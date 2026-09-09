@@ -1,0 +1,9 @@
+// Earth's first object oriented programming language - SIMULA
+// Procedural programming is a programming style where code runs step-by-step from top to bottom
+// To run: tsc
+// To run: npm i -g tsx -> 
+
+1. What is object? 
+=> An object is a value that groups related data as a key-value paris,
+where each key is called property and each property hold its own value
+=> An object is a data structure

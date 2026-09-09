@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Handling Cheat Sheet</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 30px;
+        line-height: 1.6;
+        background: #242323;
+        color: #fafafa;
+      }
+
+      .box {
+        width: 220px;
+        height: 120px;
+        background: #e8f4ff;
+        border: 2px solid #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 15px 0;
+        user-select: none;
+      }
+
+      button {
+        padding: 8px 14px;
+        margin: 5px;
+        cursor: pointer;
+      }
+
+      input,
+      select {
+        padding: 8px;
+        margin: 8px 0;
+        width: 220px;
+      }
+
+      ul {
+        padding-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JavaScript Event Handling Cheat Sheet</h1>
+
+    <p id="message">Interact with the elements below.</p>
+
+    <hr />
+
+    <h2>1. Click Event</h2>
+    <button id="clickBtn">Click Me</button>
+
+    <hr />
+
+    <h2>2. Double Click</h2>
+    <button id="dblBtn">Double Click Me</button>
+
+    <hr />
+
+    <h2>3. Mouse Events</h2>
+
+    <div id="box" class="box">Hover or Leave</div>
+
+    <hr />
+
+    <h2>4. Input Event</h2>
+
+    <input id="nameInput" placeholder="Type your name" />
+
+    <p id="liveText"></p>
+
+    <hr />
+
+    <h2>5. Change Event</h2>
+
+    <select id="colorSelect">
+      <option value="">Choose Color</option>
+      <option value="red">Red</option>
+      <option value="green">Green</option>
+      <option value="blue">Blue</option>
+    </select>
+
+    <hr />
+
+    <h2>6. Keyboard Events</h2>
+
+    <input id="keyInput" placeholder="Press any key" />
+
+    <p id="keyOutput"></p>
+
+    <hr />
+
+    <h2>7. Form Submit</h2>
+
+    <form id="myForm">
+      <input id="email" type="email" placeholder="Email" required />
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <p id="formOutput"></p>
+
+    <hr />
+
+    <h2>8. Event Delegation</h2>
+
+    <ul id="list">
+      <li>Apple</li>
+      <li>Banana</li>
+      <li>Orange</li>
+    </ul>
+
+    <script>
+      // ================================
+      // Select Elements
+      // ================================
+
+      const message = document.getElementById("message");
+      const box = document.getElementById("box");
+
+      // ================================
+      // 1. Click
+      // ================================
+
+      document.getElementById("clickBtn").addEventListener("click", () => {
+        message.textContent = "Button Clicked!";
+      });
+
+      // ================================
+      // 2. Double Click
+      // ================================
+
+      document.getElementById("dblBtn").addEventListener("dblclick", () => {
+        alert("Double Click detected!");
+      });
+
+      // ================================
+      // 3. Mouse Events
+      // ================================
+
+      box.addEventListener("mouseenter", () => {
+        box.style.background = "lightgreen";
+        box.textContent = "Mouse Enter";
+      });
+
+      box.addEventListener("mouseleave", () => {
+        box.style.background = "#e8f4ff";
+        box.textContent = "Mouse Left";
+      });
+
+      // ================================
+      // 4. Input Event
+      // Fires every time the value changes
+      // ================================
+
+      document
+        .getElementById("nameInput")
+        .addEventListener("input", (event) => {
+          document.getElementById("liveText").textContent =
+            `Hello ${event.target.value}`;
+        });
+
+      // ================================
+      // 5. Change Event
+      // Fires after selection changes
+      // ================================
+
+      document
+        .getElementById("colorSelect")
+        .addEventListener("change", (event) => {
+          document.body.style.background = event.target.value || "white";
+        });
+
+      // ================================
+      // 6. Keyboard Events
+      // ================================
+
+      document
+        .getElementById("keyInput")
+        .addEventListener("keydown", (event) => {
+          document.getElementById("keyOutput").textContent =
+            `Key: ${event.key}`;
+        });
+
+      // ================================
+      // 7. Form Submit
+      // preventDefault()
+      // ================================
+
+      document.getElementById("myForm").addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const email = document.getElementById("email").value;
+
+        document.getElementById("formOutput").textContent =
+          `Submitted: ${email}`;
+      });
+
+      // ================================
+      // 8. Event Delegation
+      // One listener handles all <li>
+      // ================================
+
+      document.getElementById("list").addEventListener("click", (event) => {
+        if (event.target.tagName === "LI") {
+          alert(`You clicked ${event.target.textContent}`);
+        }
+      });
+    </script>
+  </body>
+</html>

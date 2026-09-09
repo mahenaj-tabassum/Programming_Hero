@@ -1,0 +1,32 @@
+DOM = Document Object Model
+BOX = Box Object Model
+
+DOM selection = Select the node of the DOM
+
+1. Node list
+2. Html Collection
+3. Difference between nodeList and HTMLCollection
+
+
+
+*** Vanilla JS vs React Virtual DOM, Diffing, and the Component Mindset
+
+Vanilla = You manually tell the browser what to change
+React = You describe what the UI should look like, and React figures out what needs to change
+
+Vanilla JS: You're the painter. 🎨
+
+React: You're the architect. React hires the painter. 🏗️
+
+
+
+-------
+Virtual DOM: A lightweight JavaScript copy of the Real DOM.
+
+Diffing: React compares the old and new Virtual DOM to find changes.
+
+Reconciliation: React updates only the changed parts of the Real DOM.
+
+Why components? They make UI reusable, organized, and easier to maintain.
+
+Why keys? They help React identify list items efficiently during diffing.

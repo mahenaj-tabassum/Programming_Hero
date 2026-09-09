@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="color: #fafafa; background-color: rgb(54, 54, 54)">
+    <h2 id="bd">Hello Bangladesh</h2>
+    <h2 class="ph">Hello Programming Hero</h2>
+    <button>Login</button>
+    <input type="text" />
+    <input type="email" />
+
+    <!-- Internal JS -->
+    <script>
+      /*-- 
+    * document.getElementById()
+    * document.getElementsByClassName()  =>  Returns a HTMLCollection (live collection).
+    * document.getElementsByTagName()
+    * document.querySelector(".class")
+    * document.querySelector("#id")
+    * document.querySelector("tag")
+    * document.querySelectorAll()        => Returns a nodeList
+    
+    */
+      /** Classic Way */
+
+      const bd = document.getElementById("bd");
+      const input = document.getElementsByTagName("input");
+      const ph = document.getElementsByClassName("ph");
+
+      /** Modern Way */
+      const bangladesh = document.querySelector("#bd");
+      const ph2 = document.querySelector(".ph");
+      const input2 = document.querySelector("input");
+      const allInput = document.querySelectorAll("input");
+    </script>
+  </body>
+</html>

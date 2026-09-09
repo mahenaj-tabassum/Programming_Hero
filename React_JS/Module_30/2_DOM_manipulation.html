@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .hello {
+        border: 2px solid red;
+        padding: 10px;
+        margin: 10px;
+      }
+      .hello-blue {
+        border: 2px dotted blue;
+        padding: 5px;
+        margin: 10px;
+      }
+      .img-border {
+        border-radius: 9rem;
+        border: 1rem solid pink;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 class="hello" id="bd">
+      HELLO, Bangladesh <span style="display: none">HIDDEN</span>
+    </h2>
+    <h2>Hello, Programming HERO</h2>
+    <button>Login</button>
+    <input type="text" />
+    <input type="file" />
+    <img height="200px" src="" alt="img" />
+    <script>
+      /**
+       *
+       * Text content Modify
+       *
+       * */
+      const bd = document.getElementById("bd");
+      console.log(typeof bd); //object
+      console.log(bd.textContent); // HELLO, Bangladesh HIDDEN
+      console.log(bd.innerHTML); // HELLO, Bangladesh <span style="display: none">HIDDEN</span>
+      console.log(bd.innerText); // HELLO, Bangladesh
+
+      //   bd.textContent = "HELLO Canada";
+      bd.innerHTML = "<h6 style='color: red'>Hello BRO BD</h6>";
+
+      /**
+       *  Attribute
+       *
+       */
+      console.log(bd.getAttribute("class"));
+      bd.setAttribute("class", "hello-blue");
+      const imgSrc = document.querySelector("img");
+      console.log(imgSrc.getAttribute("src"));
+      imgSrc.setAttribute(
+        "src",
+        "https://images.unsplash.com/photo-1779896412109-1b221c2b350b?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw4fHx8ZW58MHx8fHx8",
+      );
+
+      imgSrc.src = "";
+      imgSrc.src =
+        "https://i.pinimg.com/736x/14/00/a8/1400a81b30ba8d773c149245a4f21274.jpg";
+
+      imgSrc.removeAttribute("alt");
+      console.log(imgSrc.hasAttribute("alt")); // false
+      imgSrc.alt = "Hello this is a sunflower image";
+
+      /**
+       *  Style
+       *
+       */
+      imgSrc.style.height = "300px";
+      imgSrc.style.width = "300px";
+      imgSrc.style.objectFit = "cover";
+
+      /**
+       *  Class
+       *
+       */
+      imgSrc.classList.add("img-border");
+      //   imgSrc.classList.remove("img-border")
+      imgSrc.classList.toggle("img-border");
+      imgSrc.classList.toggle("img-border"); // Works reverse
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /**
+       * setInterval()
+       * Purpose: Run a function repeatedly after a fixed time  interval
+       * Syntax: setInterval(fn (code to repeat), delay in ms)
+       *
+       */
+
+      let count = 1;
+      let timer = setInterval(() => {
+        // console.log(count);
+        count++;
+        if (count > 2) {
+          clearInterval(timer);
+        }
+      }, 1000);
+
+      let counter = 0;
+      let timer2 = setInterval(() => {
+        //   console.log(`Interval executed ${counter} times`);
+        counter++;
+        if (counter === 3) {
+          clearInterval(timer2);
+        }
+      }, 1000);
+
+      //
+      //   setInterval(() => {
+      //     let date = new Date();
+      //     let time = date.toLocaleTimeString();
+      //     console.log(time);
+      //   }, 1000);
+    </script>
+  </body>
+</html>

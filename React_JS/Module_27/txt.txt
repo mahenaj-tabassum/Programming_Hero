@@ -1,0 +1,53 @@
+1. What is react?
+-> A javascript library for building modern user interface.
+2. React vs Next.js
+3. Basic structure of react
+4. What is component?
+=> React components are just JavaScript functions that returns JSX🚀
+=> A component is a reusable piece of UI.
+5. Types of component
+=> There are two main types of Component.
+   - Functional Component (modern react)
+   - Class Component (older react)
+
+6. How to create component
+7. Jsx, Jsx rules, dynamic content render
+8. Using Jsx with typescript
+9. Props (send data from parent component to child component, How to receive that data and use )
+10. component import and export
+11. typescript definition for Props
+12. Creating reusable component
+13. Conditional rendering
+14. Single Page application
+
+----------------------------------------------------
+Practice Task : https://docs.google.com/document/d/1SaT9lEMqbvQkXfdfu88iuAArnq6f3xZ21GC7QUXFExI/edit?tab=t.0
+
+
+
+
+-----------------------------------------------------
+1. Why react.js is called "React"?
+-> because the library is built around a single core paradigm:
+   the user interface reacts immediately to changes in application state
+   and data
+
+
+
+
+-----------------------------------------------------
+return() => Returns JSX expression
+         => Creates the UI of component
+return{} => Returns JavaScript Object
+         => Returns Data
+
+
+
+-----------------------------------------------------
+JSX rules: 
+1. Return a single root element
+2. Close all JSX tags
+3. Use camelCase for attribute
+4. Use {} for javascript expression
+5. Use {{}} when passing object literals
+6. Use single object for inline styles

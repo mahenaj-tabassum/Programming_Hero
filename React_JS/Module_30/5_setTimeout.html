@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="p"></p>
+    <h1 id="msg">Loading....</h1>
+
+    <script>
+      /** setTimeout()
+       * Purpose: Run a function once after a special delay
+       * setTimeout(function, milliseconds)
+       *
+       * Asynchronous
+       * Memory shortcut: Call Stack → Web API → Callback Queue → Event Loop → Call Stack 🔄
+       *
+       * Q: Does setTimeout(fn, 0) run immediately?
+       * A: No. It runs after the current call stack finishes, making it asynchronous.
+       */
+      console.log("start");
+      setTimeout(() => {
+        console.log("Hello After 2 seconds!");
+      }, 2000);
+      console.log("End");
+
+      setTimeout(() => {
+        document.getElementById("p").textContent = "After 3 seconds";
+        document.getElementById("msg").textContent = "Data Loaded!";
+      }, 3000);
+
+      /** Clear a Time out */
+      const timer = setTimeout(() => {
+        console.log("This won't run");
+      }, 5000);
+
+      clearTimeout(timer);
+    </script>
+  </body>
+</html>

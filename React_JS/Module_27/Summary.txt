@@ -1,0 +1,6 @@
+1. React Project Setup : vite.dev
+2. Component => Component is nothing but just a JavaScript Function which returns JSX
+3. JSX : It looks like HTML, but it is a extension of JS and React
+4. Props {Parents(has less code) to child(has many code)}
+5. Conditional Rendering 
+6. Loop through list of Item  (Map)

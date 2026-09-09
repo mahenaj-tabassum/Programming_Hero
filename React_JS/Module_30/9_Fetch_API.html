@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /**
+       * 1. What is a Promise?
+       * A. A promise is an object representing a future result
+       *
+       * 2. Fetch returns a Promise
+       *
+       * fetch() => Promise => Response => JSON
+       *
+       * React pattern
+       * component renders => fetch starts => data arrives => state update => component renders again
+       */
+
+      const promise = new Promise((resolve, reject) => {
+        let success = false;
+        if (success) {
+          resolve("Success!");
+        } else {
+          reject("Failed");
+        }
+      });
+      promise
+        .then((result) => console.log(result))
+        .catch((e) => console.log(e));
+
+      // Fetch
+      const data = fetch("https://jsonplaceholder.typicode.com/users");
+      //   Promise(fetch returns a promise)
+      data
+        .then((res) => res.json())
+        .then((users) => console.log(users))
+        .catch((e) => console.log(e));
+
+      // ASYNC / AWAIT with error handling
+      async function loadUsers() {
+        try {
+          const res = await fetch("https://jsonplaceholder.typicode.com/users");
+          const userData = await res.json();
+          console.log(userData);
+        } catch (e) {
+          console.log("something went wrong", e);
+        }
+      }
+      loadUsers();
+    </script>
+  </body>
+</html>

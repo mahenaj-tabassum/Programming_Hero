@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOM Cheat Sheet</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 30px;
+        line-height: 1.6;
+        background: rgb(48, 48, 48);
+        color: #fafafa;
+      }
+      button {
+        padding: 8px 14px;
+        margin: 5px;
+        cursor: pointer;
+      }
+      .box {
+        padding: 15px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        margin: 15px 0;
+      }
+      .spacer {
+        height: 700px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Browser Object Model (BOM) Cheat Sheet</h1>
+
+    <div class="box">
+      <button id="alertBtn">Alert</button>
+      <button id="confirmBtn">Confirm</button>
+      <button id="promptBtn">Prompt</button>
+    </div>
+
+    <div class="box">
+      <button id="locationBtn">Current URL</button>
+      <button id="reloadBtn">Reload Page</button>
+    </div>
+
+    <div class="box">
+      <button id="backBtn">History Back</button>
+      <button id="forwardBtn">History Forward</button>
+    </div>
+
+    <div class="box">
+      <button id="navigatorBtn">Browser Info</button>
+      <button id="screenBtn">Screen Size</button>
+    </div>
+
+    <div class="box">
+      <button id="timeoutBtn">setTimeout</button>
+      <button id="intervalBtn">Start Interval</button>
+      <button id="stopIntervalBtn">Stop Interval</button>
+
+      <p id="counter">0</p>
+    </div>
+
+    <div class="box">
+      <button id="scrollBtn">Scroll Down</button>
+      <button id="topBtn">Scroll Top</button>
+    </div>
+
+    <div class="spacer"></div>
+
+    <h2>Bottom of Page</h2>
+
+    <script>
+      // =======================
+      // window object
+      // =======================
+
+      console.log(window); // Everything belongs to window
+
+      // =======================
+      // alert()
+      // =======================
+
+      document.getElementById("alertBtn").addEventListener("click", () => {
+        window.alert("Hello from BOM!");
+      });
+
+      // =======================
+      // confirm()
+      // =======================
+
+      document.getElementById("confirmBtn").addEventListener("click", () => {
+        const result = confirm("Do you like JavaScript?");
+
+        alert(result ? "Great!" : "Maybe later!");
+      });
+
+      // =======================
+      // prompt()
+      // =======================
+
+      document.getElementById("promptBtn").addEventListener("click", () => {
+        const name = prompt("What's your name?");
+
+        if (name) {
+          alert(`Hello ${name}!`);
+        }
+      });
+
+      // =======================
+      // location
+      // =======================
+
+      document.getElementById("locationBtn").addEventListener("click", () => {
+        alert(location.href);
+
+        console.log(location.protocol);
+        console.log(location.hostname);
+        console.log(location.pathname);
+      });
+
+      // Reload
+      document.getElementById("reloadBtn").addEventListener("click", () => {
+        location.reload();
+      });
+
+      // =======================
+      // history
+      // =======================
+
+      document.getElementById("backBtn").addEventListener("click", () => {
+        history.back();
+      });
+
+      document.getElementById("forwardBtn").addEventListener("click", () => {
+        history.forward();
+      });
+
+      // =======================
+      // navigator
+      // =======================
+
+      document.getElementById("navigatorBtn").addEventListener("click", () => {
+        alert(`
+            Browser: ${navigator.userAgent}
+            Language: ${navigator.language}
+            Online: ${navigator.onLine}
+    `);
+      });
+
+      // =======================
+      // screen
+      // =======================
+
+      document.getElementById("screenBtn").addEventListener("click", () => {
+        alert(`Screen: ${screen.width} x ${screen.height}`);
+      });
+
+      // =======================
+      // setTimeout
+      // =======================
+
+      document.getElementById("timeoutBtn").addEventListener("click", () => {
+        setTimeout(() => {
+          alert("Executed after 2 seconds!");
+        }, 2000);
+      });
+
+      // =======================
+      // setInterval
+      // =======================
+
+      let count = 0;
+      let intervalId = null;
+
+      document.getElementById("intervalBtn").addEventListener("click", () => {
+        if (intervalId) return;
+
+        intervalId = setInterval(() => {
+          count++;
+          document.getElementById("counter").textContent = count;
+        }, 1000);
+      });
+
+      document
+        .getElementById("stopIntervalBtn")
+        .addEventListener("click", () => {
+          clearInterval(intervalId);
+          intervalId = null;
+        });
+
+      // =======================
+      // Scroll
+      // =======================
+
+      document.getElementById("scrollBtn").addEventListener("click", () => {
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: "smooth",
+        });
+      });
+
+      document.getElementById("topBtn").addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    </script>
+  </body>
+</html>

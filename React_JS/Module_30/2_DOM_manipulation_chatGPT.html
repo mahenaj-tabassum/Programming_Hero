@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Manipulation Cheat Sheet</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 30px;
+        line-height: 1.6;
+      }
+      .card {
+        padding: 15px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        margin: 15px 0;
+        color: #747474;
+      }
+      .active {
+        background: #d4edda;
+        border-color: green;
+      }
+      button {
+        margin: 5px;
+        padding: 8px 14px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="title">Hello DOM!</h1>
+    <img id="photo" src="https://placehold.co/200x120" alt="placeholder" />
+    <div id="box" class="card">I'm a card.</div>
+
+    <hr />
+
+    <button id="textBtn">Change Text</button>
+    <button id="htmlBtn">Change HTML</button>
+    <button id="styleBtn">Change Style</button>
+    <button id="attrBtn">Change Attribute</button>
+    <button id="classBtn">Toggle Class</button>
+    <button id="createBtn">Create Element</button>
+    <button id="removeBtn">Remove Last Element</button>
+    <button id="replaceBtn">Replace Title</button>
+
+    <div id="container" class="card">
+      <strong>New elements will appear here.</strong>
+    </div>
+
+    <script>
+      // =====================================
+      // DOM SELECTION
+      // =====================================
+
+      const title = document.getElementById("title");
+      const photo = document.getElementById("photo");
+      const box = document.getElementById("box");
+      const container = document.getElementById("container");
+
+      // querySelector examples
+      const firstButton = document.querySelector("button");
+      const allButtons = document.querySelectorAll("button");
+
+      console.log(firstButton); // textBtn
+      console.log(allButtons); // nodeList
+
+      // =====================================
+      // 1. Change textContent
+      // =====================================
+      document.getElementById("textBtn").addEventListener("click", () => {
+        title.textContent = "Text changed using textContent!";
+      });
+
+      // =====================================
+      // 2. Change innerHTML
+      // =====================================
+
+      document.getElementById("htmlBtn").addEventListener("click", () => {
+        title.innerHTML = "<em>HTML changed with innerHTML</em>";
+      });
+
+      // =====================================
+      // 3. Change styles
+      // =====================================
+
+      document.getElementById("styleBtn").addEventListener("click", () => {
+        title.style.color = "blue";
+        title.style.fontSize = "40px";
+        title.style.backgroundColor = "yellow";
+      });
+
+      // =====================================
+      // 4. Attributes
+      // =====================================
+
+      document.getElementById("attrBtn").addEventListener("click", () => {
+        // Property way
+        photo.src = "https://placehold.co/200x120/orange/white?text=Changed";
+        photo.alt = "Changed Image";
+
+        // setAttribute()
+        photo.setAttribute("title", "Hover Me");
+        console.log(photo.getAttribute("title"));
+
+        // Uncomment to remove
+        //  photo.removeAttribute("title");
+      });
+
+      // =====================================
+      // 5. classList
+      // =====================================
+
+      document.getElementById("classBtn").addEventListener("click", () => {
+        box.classList.toggle("active");
+        box.classList.toggle("dark");
+      });
+      console.log(box.classList.contains("active"));
+
+      // =====================================
+      // 6. Create + Append Element
+      // =====================================
+
+      document.getElementById("createBtn").addEventListener("click", () => {
+        const heading2 = document.createElement("h2");
+        heading2.textContent = "I am a newly added H2";
+        heading2.classList.add("card");
+        container.appendChild(heading2);
+      });
+
+      // =====================================
+      // 7. Remove Element
+      // =====================================
+
+      document.getElementById("removeBtn").addEventListener("click", () => {
+        const lastEl = container.lastElementChild;
+        if (lastEl && lastEl.tagName === "H2") {
+          lastEl.remove();
+        }
+      });
+
+      // =====================================
+      // 8. Replace Element
+      // =====================================
+
+      document.getElementById("replaceBtn").addEventListener("click", () => {
+        const newHeading = document.createElement("h2");
+        newHeading.textContent = "I am a Replaced Title h2";
+        title.replaceWith(newHeading);
+      });
+
+      // =====================================
+      // BONUS: Loop through NodeList
+      // =====================================
+
+      allButtons.forEach((btn) => {
+        btn.addEventListener("mouseover", () => {
+          btn.style.transform = "scale(1.05)";
+        });
+        btn.addEventListener("mouseleave", () => {
+          btn.style.transform = "scale(1)";
+        });
+      });
+    </script>
+  </body>
+</html>

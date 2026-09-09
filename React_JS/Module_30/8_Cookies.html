@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="street"></h1>
+
+    <script>
+      document.cookie = "username=ChatGPT";
+      console.log(document.cookie);
+      sessionStorage.setItem("street", "Mirpur Road, Dhaka");
+      let getSessionData = sessionStorage.getItem("street");
+      document.getElementById("street").innerText = `${getSessionData}`;
+
+      /**
+       * 1. Why use cookie?
+       * - keep users logged in.
+       * - store language preferences
+       * - remember user sessions
+       *
+       * Cookies are automatically sent to the server with every request.
+       *
+       * Q: Why aren't JWT tokens always stored in localStorage?
+       * A: Because localStorage is accessible to JavaScript, making it more
+       * vulnerable to XSS attacks. Many applications prefer HttpOnly cookies, which
+       * JavaScript cannot read.
+       */
+    </script>
+  </body>
+</html>

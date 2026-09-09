@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="nameInput" />
+    <button id="save">Save</button>
+    <h2 id="output"></h2>
+    <script>
+      /**
+       * Browser Storage lets a website save data inside your browser as key-value pairs.
+       *
+       * The browser can store as key-value pairs
+       *
+       * Feature             | LocalStorage  | sessionStorage
+       * ---------------------------------------------------------
+       * LifeTime            | Until Deleted | Until tab closes
+       * ---------------------------------------------------------
+       * Shared across tabs  | Yes           | No
+       * ---------------------------------------------------------
+       * Data Type           | String        | String
+       *
+       * localStorage.getItem()
+       * The getItem() method of the Storage interface, when passed a key name, will return that key's value, or null if the key does not exist, in the given Storage object.
+       *
+       *
+       * 1. Why do we use JSON.stringify()?
+       * Because localStorage stores only strings.
+       *
+       * What's the difference between localStorage and sessionStorage?
+       * localStorage survives browser restarts.
+       * sessionStorage disappears when the tab is closed.
+       *
+       * What does localStorage.getItem("unknown") return?
+       * null, not undefined.
+       */
+
+      // Set Item
+      localStorage.setItem("name", "ChatGPT");
+      localStorage.setItem("age", "12");
+      // Get item
+      let localStorageName = localStorage.getItem("name");
+      console.log(localStorageName);
+      console.log(localStorage.getItem("theme")); // null
+
+      //   Remove Item
+      localStorage.removeItem("age");
+      localStorage.getItem("age"); // null
+
+      //   Delete Everything
+      localStorage.clear();
+      sessionStorage.clear();
+
+      //   Storing Object
+      const user = {
+        name: "Sunflower",
+        age: 30,
+      };
+      localStorage.setItem("user", JSON.stringify(user));
+      const data = localStorage.getItem("user");
+      console.log(data);
+      const userObj = JSON.parse(data);
+      console.log(userObj);
+      console.log(userObj.name);
+
+      //   Without Stringify()
+      const userInfo = {
+        name: "Luke",
+        age: 30,
+      };
+      localStorage.setItem("userInfo", userInfo);
+      console.log(localStorage.getItem("userInfo")); // [object Object]
+
+      //   Mini DOM Example
+      const nameInp = document.getElementById("nameInput");
+      const save = document.getElementById("save");
+      const output = document.getElementById("output");
+
+      save.addEventListener("click", () => {
+        const nameValue = nameInp.value;
+        localStorage.setItem("name", nameValue);
+
+        output.textContent = localStorage.getItem("name");
+      });
+
+      /**
+       * JSON.stringify() packs an object into string.
+       * JSON.parse() unpacks that string back into an object.
+       *
+       */
+    </script>
+  </body>
+</html>

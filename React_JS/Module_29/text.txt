@@ -1,0 +1,6 @@
+1. Folder Structure
+2. Fetching Data
+    - Create a Promise to load Data
+    - Create Suspense fallback
+    - Add Parent Component with providing the promise
+    - use use()

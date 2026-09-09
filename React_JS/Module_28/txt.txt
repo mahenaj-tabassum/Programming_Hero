@@ -1,0 +1,54 @@
+1. How to organize react application
+2. Event-Handling
+3. Hooks
+4. State
+5. Use() Hooks
+6. useEffect() - to fetch data from API
+7. React Documentation
+
+
+---------------------------------------
+Revise - 
+1. What is React?
+2. React Installation
+3. Component
+4. JSX
+5. Props
+6. Conditional Rendering
+        - if else
+        - ternary operator
+        - &&
+        - ||
+7. Map through list
+
+
+
+
+----------------------------------
+1. What is linter in React?
+=> A linter in React is a development tool that performs static code analysis,
+means it scans your code without running it to detect potential bugs, syntax 
+errors, and code style inconsistencies.
+2. index.html
+=> This file is the main entry point of overall project
+
+3. vite.config: 
+=> If any packages have been installed, to use those we need this file
+
+4. devDependencies: 
+Dependencies are used in the dev
+
+5. To create an Application we need 3 layers
+
+=----------------------------------
+Learn: 
+1. alert(message) : Only accepts 1 argument
+2. console.log(message, value): Can accept multiple arguments
+
+
+
+/**
+1. Component
+2. JSX
+3. Props4. event, state, data loading
+*/
