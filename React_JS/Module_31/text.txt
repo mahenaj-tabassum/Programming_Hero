@@ -1,0 +1,12 @@
+1. Component 
+2. JSX
+3. Props
+4. State
+5. Event Handling
+6. Data Fetching
+
+
+
+#. Props Drilling কী?
+   * যখন একটা prop অনেক layer পার হয়ে নিচের component-এ যায়, যদিও মাঝের component সেটা ব্যবহারই করে না।
+   * এটাই Props Drilling।

@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "name": "Shakib Al Hasan",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk6lCzXebg1QntuEawvDi8xxbcTqNjLGj0kwClBFwN_Q&s=10",
+    "origin": "Bangladesh",
+    "type": "All-Rounder",
+    "bowlingStyle": "Left-arm Orthodox",
+    "battingStyle": "Left-hand Bat",
+    "price": 1200
+  },
+  {
+    "id": 2,
+    "name": "Taskin Ahmed",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfVQbWdH68IQG3sfyo7qZqpHF_nva-aWYXrQ-QUdxrOA&s=10",
+    "origin": "Bangladesh",
+    "type": "Bowler",
+    "bowlingStyle": "Right-arm Fast",
+    "battingStyle": "Left-hand Bat",
+    "price": 950
+  },
+  {
+    "id": 3,
+    "name": "Litton Das",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ70R7mCU5zY9a3vQbNh86hZjA5jK9s08-suEWrsYVvdw&s=10",
+    "origin": "Bangladesh",
+    "type": "Wicket-Keeper",
+    "bowlingStyle": "Right-arm Off Break",
+    "battingStyle": "Right-hand Bat",
+    "price": 1000
+  },
+  {
+    "id": 4,
+    "name": "Mushfiqur Rahim",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWF6xl4jKKk1XnoSSvneJpeyzPF1oqCk5SVWxrnySmhg&s=10",
+    "origin": "Bangladesh",
+    "type": "Wicket-Keeper",
+    "bowlingStyle": "None",
+    "battingStyle": "Right-hand Bat",
+    "price": 1100
+  },
+  {
+    "id": 5,
+    "name": "Mustafizur Rahman",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3iqloyRVLtuP5yfYy37AvpdFS9f1BbughR8TTboGFBQ&s=10",
+    "origin": "Bangladesh",
+    "type": "Bowler",
+    "bowlingStyle": "Left-arm Fast-Medium",
+    "battingStyle": "Left-hand Bat",
+    "price": 980
+  },
+  {
+    "id": 6,
+    "name": "Najmul Hossain Shanto",
+    "img": "https://placehold.co/600x400",
+    "origin": "Bangladesh",
+    "type": "Batter",
+    "bowlingStyle": "Right-arm Off Break",
+    "battingStyle": "Left-hand Bat",
+    "price": 920
+  },
+  {
+    "id": 7,
+    "name": "Towhid Hridoy",
+    "img": "https://placehold.co/600x400",
+    "origin": "Bangladesh",
+    "type": "Batter",
+    "bowlingStyle": "Right-arm Off Break",
+    "battingStyle": "Right-hand Bat",
+    "price": 850
+  },
+  {
+    "id": 8,
+    "name": "Mehidy Hasan Miraz",
+    "img": "https://placehold.co/600x400",
+    "origin": "Bangladesh",
+    "type": "All-Rounder",
+    "bowlingStyle": "Right-arm Off Break",
+    "battingStyle": "Right-hand Bat",
+    "price": 900
+  },
+  {
+    "id": 9,
+    "name": "Tanzim Hasan Sakib",
+    "img": "https://placehold.co/600x400",
+    "origin": "Bangladesh",
+    "type": "Bowler",
+    "bowlingStyle": "Right-arm Fast-Medium",
+    "battingStyle": "Right-hand Bat",
+    "price": 780
+  },
+  {
+    "id": 10,
+    "name": "Soumya Sarkar",
+    "img": "https://placehold.co/600x400",
+    "origin": "Bangladesh",
+    "type": "All-Rounder",
+    "bowlingStyle": "Right-arm Medium-Fast",
+    "battingStyle": "Left-hand Bat",
+    "price": 820
+  }
+]
