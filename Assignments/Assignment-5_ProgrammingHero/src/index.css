@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@200..800&display=swap");
+
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light;
+}
+
+@theme {
+  --font-inter: "Inter", sans-serif;
+  --font-jakarta: "Plus Jakarta Sans", sans-serif;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+p {
+  font-family: var(--font-jakarta);
+}
+
+:root {
+  --brand-gradient: linear-gradient(
+    to right,
+    rgb(255, 87, 34) 0%,
+    rgb(216, 27, 126) 50%,
+    rgb(124, 58, 237) 100%
+  );
+  --text-gradient: linear-gradient(
+    to right,
+    rgba(236, 72, 153, 1) 0%,
+    rgba(139, 92, 246, 1) 100%
+  );
+}
+
+/* Reusable text gradient */
+.text-brand-gradient {
+  background-image: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.text-pink-gradient {
+  background-image: var(--text-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Reusable background gradient */
+.bg-brand-gradient {
+  background-image: var(--brand-gradient);
+}
