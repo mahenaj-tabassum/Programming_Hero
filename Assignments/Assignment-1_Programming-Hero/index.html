@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevConf</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <main>
+      <!-------------------------------------------------------------
+         Navbar
+      --------------------------------------------------------------->
+      <nav id="navbar">
+        <img src="./images/logo.png" alt="Logo" />
+        <ul class="nav-links">
+          <li><a href="#speakers">Speakers</a></li>
+          <li><a href="#schedule">Schedule</a></li>
+          <li><a href="#tracks">Tracks</a></li>
+          <li><a href="#venue">Venue</a></li>
+          <li><a href="#blog">Blog</a></li>
+        </ul>
+        <button class="btn">Register Now</button>
+      </nav>
+
+      <!-------------------------------------------------------------
+         Hero Section
+      --------------------------------------------------------------->
+      <header id="hero">
+        <h1>Code.<em>Connect</em>.Create</h1>
+        <p>
+          Join 4,000+ engineers, founders, and builders at the premier developer
+          <br />
+          conference of 2026. Three days of cutting-edge talks, hands-on <br />
+          workshops, and meaningful connections.
+        </p>
+
+        <button class="btn">Register Now</button>
+      </header>
+
+      <!-------------------------------------------------------------
+         Speakers Section
+      --------------------------------------------------------------->
+      <section id="speakers">
+        <h1 class="section-title">Meet the Speakers</h1>
+        <div class="card-container">
+          <div class="card">
+            <img src="./images/andrej.png" alt="Andrej Img" />
+            <div class="speakers-info">
+              <p class="speakers-p1">AI / ML</p>
+              <h2>Andrej Karpathy</h2>
+              <p class="speakers-p2">Pretraining, Anthropic</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="./images/demis.png" alt="Demis Hassabis img" />
+            <div class="speakers-info">
+              <p class="speakers-p1">CLOUD & DEVOPS</p>
+              <h2>Demis Hassabis</h2>
+              <p class="speakers-p2">Co-Founder and CEO, Google DeepMind</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="./images/gary.png" alt="Gray Marcus img" />
+            <div class="speakers-info">
+              <p class="speakers-p1">FRONTEND</p>
+              <h2>Gary Marcus</h2>
+              <p class="speakers-p2">Staff Engineer, Verce</p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="./images/mustafa.png" alt="Mustafa Suleyman img" />
+            <div class="speakers-info">
+              <p class="speakers-p1">Security</p>
+              <h2>Mustafa Suleyman</h2>
+              <p class="speakers-p2">CEO of Microsoft AI</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-------------------------------------------------------------
+         Pricing Section
+      --------------------------------------------------------------->
+      <section id="pricing">
+        <h1 class="section-title">Secure Your Spot</h1>
+        <p class="subtitle">Early-bird pricing ends August 15, 2026.</p>
+        <div class="pricing-container">
+          <div class="pricing-card-container">
+            <div class="pricing-card">
+              <p class="card-status">STANDARD</p>
+              <h2 class="price">$399</h2>
+              <p class="card-status">per person</p>
+              <hr />
+              <ul class="pricing-details">
+                <li>Access to all 3 conference days</li>
+                <li>48 curated technical talks</li>
+                <li>2 workshop sessions</li>
+                <li>Networking lunch & coffee breaks</li>
+                <li>Conference swag bag</li>
+                <li>Digital recordings (30 days)</li>
+              </ul>
+            </div>
+
+            <button class="btn-outline">Get Standard</button>
+          </div>
+
+          <div class="pricing-card-container card-pro">
+            <div class="pricing-card">
+              <p class="card-status p-pro">PRO</p>
+              <h2 class="price">$749</h2>
+              <p class="card-status">per person</p>
+              <hr />
+              <ul class="pricing-details">
+                <li>Everything in Standard</li>
+                <li>Unlimited workshop access</li>
+                <li>Speaker meet & greet</li>
+                <li>VIP networking dinner</li>
+                <li>Lifetime recording access</li>
+                <li>1-on-1 mentorship (30 min)</li>
+              </ul>
+            </div>
+
+            <button class="btn">Get Pro</button>
+          </div>
+
+          <div class="pricing-card-container">
+            <div class="pricing-card">
+              <p class="card-status">TEAM</p>
+              <h2 class="price">$5,999</h2>
+              <p class="card-status">up to 10 people</p>
+              <hr />
+              <ul class="pricing-details">
+                <li>Everything in Pro (10 seats)</li>
+                <li>Dedicated team lounge access</li>
+                <li>Private workshop booking</li>
+                <li>Company logo on event page</li>
+                <li>Recruitment booth (1 day)</li>
+                <li>Priority customer support</li>
+              </ul>
+            </div>
+
+            <button class="btn-outline btn-contact">Contact Us</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="venue">
+        <div class="venue-container">
+          <h2 class="section-title">Our Venue</h2>
+          <p class="venue-sub">
+            Tucked along the waterfront, the space blends open-air gardens with
+            a grand reception hall — an easy backdrop for a long, unhurried
+            evening.
+          </p>
+
+          <div class="venue-card">
+            <div class="venue-card__info">
+              <span class="venue-tag">The Reception</span>
+              <h3 class="venue-name">Harborview Estate</h3>
+
+              <ul class="venue-details">
+                <li>
+                  <span class="venue-details__label">Address</span>
+                  <span class="venue-details__value"
+                    >18 Marina Walk, Bayside</span
+                  >
+                </li>
+                <li>
+                  <span class="venue-details__label">Date</span>
+                  <span class="venue-details__value"
+                    >Saturday, October 17, 2026</span
+                  >
+                </li>
+                <li>
+                  <span class="venue-details__label">Time</span>
+                  <span class="venue-details__value"
+                    >5:00 PM &mdash; 11:00 PM</span
+                  >
+                </li>
+                <li>
+                  <span class="venue-details__label">Parking</span>
+                  <span class="venue-details__value"
+                    >Complimentary valet on-site</span
+                  >
+                </li>
+              </ul>
+
+              <a href="#" class="venue-cta">
+                Get Directions
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5 12H19M19 12L13 6M19 12L13 18"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            </div>
+
+            <div class="venue-card__image">
+              <img
+                src="./images/venue.jpg"
+                alt="Harborview Estate reception hall"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-------------------------------------------------------------
+         Footer Section
+      --------------------------------------------------------------->
+      <footer>
+        <div class="footer-top">
+          <div class="footer-logo">
+            <img src="./images/footer-logo.png" alt="" />
+          </div>
+          <div class="social-links">
+            <a href="https://facebook.com" target="_blank"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+            <a href="https://x.com" target="_blank"
+              ><i class="fa-brands fa-x-twitter"></i
+            ></a>
+            <a href="https://linkedin.com" target="_blank"
+              ><i class="fa-brands fa-linkedin-in"></i
+            ></a>
+            <a href="https://github.com" target="_blank"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+          </div>
+        </div>
+
+        <hr />
+
+        <p class="copyright">© 2026 DevConf. All Rights Reserved.</p>
+      </footer>
+    </main>
+  </body>
+</html>
