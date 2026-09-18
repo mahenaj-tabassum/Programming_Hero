@@ -1,0 +1,139 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Wireless Mouse",
+      "brand": "LogiTech",
+      "category": "Electronics",
+      "price": 24.99,
+      "stock": 45,
+      "rating": 4.5,
+      "image": "https://picsum.photos/300/300?random=1"
+    },
+    {
+      "id": 2,
+      "name": "Mechanical Keyboard",
+      "brand": "Redragon",
+      "category": "Electronics",
+      "price": 59.99,
+      "stock": 20,
+      "rating": 4.7,
+      "image": "https://picsum.photos/300/300?random=2"
+    },
+    {
+      "id": 3,
+      "name": "Running Shoes",
+      "brand": "Nike",
+      "category": "Footwear",
+      "price": 89.99,
+      "stock": 30,
+      "rating": 4.8,
+      "image": "https://picsum.photos/300/300?random=3"
+    },
+    {
+      "id": 4,
+      "name": "Leather Backpack",
+      "brand": "Wildcraft",
+      "category": "Bags",
+      "price": 49.99,
+      "stock": 15,
+      "rating": 4.4,
+      "image": "https://picsum.photos/300/300?random=4"
+    },
+    {
+      "id": 5,
+      "name": "Smart Watch",
+      "brand": "Samsung",
+      "category": "Wearables",
+      "price": 149.99,
+      "stock": 12,
+      "rating": 4.6,
+      "image": "https://picsum.photos/300/300?random=5"
+    },
+    {
+      "id": 6,
+      "name": "Bluetooth Headphones",
+      "brand": "Sony",
+      "category": "Electronics",
+      "price": 79.99,
+      "stock": 28,
+      "rating": 4.9,
+      "image": "https://picsum.photos/300/300?random=6"
+    }
+  ],
+
+  "books": [
+    {
+      "id": 1,
+      "title": "The loud Patient",
+      "author": "Alex Michaelides",
+      "category": "Thriller",
+      "price": 14.99,
+      "rating": 4.5,
+      "stock": 25,
+      "publishedYear": 2019,
+      "pages": 336,
+      "coverImage": "https://picsum.photos/300/450?random=7"
+    },
+    {
+      "id": 2,
+      "title": "Atomic ",
+      "author": "James Clear",
+      "category": "Self-Help",
+      "price": 18.99,
+      "rating": 4.8,
+      "stock": 40,
+      "publishedYear": 2018,
+      "pages": 320,
+      "coverImage": "https://picsum.photos/300/450?random=8"
+    },
+    {
+      "id": 3,
+      "title": "The Alchemist",
+      "author": "Paulo Coelho",
+      "category": "Fiction",
+      "price": 12.99,
+      "rating": 4.7,
+      "stock": 35,
+      "publishedYear": 1988,
+      "pages": 208,
+      "coverImage": "https://picsum.photos/300/450?random=9"
+    },
+    {
+      "id": 4,
+      "title": "Clean Code",
+      "author": "Robert C. Martin",
+      "category": "Programming",
+      "price": 32.99,
+      "rating": 4.6,
+      "stock": 18,
+      "publishedYear": 2008,
+      "pages": 464,
+      "coverImage": "https://picsum.photos/300/450?random=4"
+    },
+    {
+      "id": 5,
+      "title": "Rich Dad Poor Dad",
+      "author": "Robert Kiyosaki",
+      "category": "Finance",
+      "price": 16.99,
+      "rating": 4.4,
+      "stock": 30,
+      "publishedYear": 1997,
+      "pages": 336,
+      "coverImage": "https://picsum.photos/300/450?random=5"
+    },
+    {
+      "id": 6,
+      "title": "The Programmer",
+      "author": "David Thomas",
+      "category": "Programming",
+      "price": 29.99,
+      "rating": 4.8,
+      "stock": 12,
+      "publishedYear": 1999,
+      "pages": 352,
+      "coverImage": "https://picsum.photos/300/450?random=6"
+    }
+  ]
+}
