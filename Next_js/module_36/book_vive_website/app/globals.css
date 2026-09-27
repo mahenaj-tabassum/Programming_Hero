@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+body {
+  font-family: var(--font-inter);
+}
+
+.font-serif {
+  font-family: var(--font-fraunces);
+}
+
+@theme {
+  --color-bg: #f8fafc;
+  --color-card: #ffffff;
+  --color-primary: #2563eb;
+  --color-accent: #7c3aed;
+  --color-ink: #0f172a;
+  --color-secondary: #64748b;
+  --color-hair: #e2e8f0;
+}
+
+:root {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --accent: #7c3aed;
+  --ink: #0f172a;
+  --secondary: #64748b;
+  --hair: #e2e8f0;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(84px + env(safe-area-inset-top, 0px));
+}
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  overflow-x: hidden;
+}
+h1,
+h2,
+h3,
+.font-serif-display {
+  font-family: "Fraunces", ui-serif, Georgia, serif;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ------------------------- Navbar ---------------------------------------------- */
+#navbar {
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  background: rgba(248, 250, 252, 0.72);
+  border-bottom: 1px solid transparent;
+  transition:
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease;
+}
+
+.nav-link {
+  position: relative;
+  color: var(--ink);
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  transition: width 0.28s ease;
+  border-radius: 2px;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+.nav-link.nav-active::after {
+  width: 100%;
+}
+
+/* ------------------------- Buttons ---------------------------------------------- */
+
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 10px 24px -8px rgba(37, 99, 235, 0.45);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 16px 32px -8px rgba(37, 99, 235, 0.45);
+}
+.btn-primary:active {
+  transform: translateY(0);
+}
+.btn-primary .ripple {
+  position: absolute;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.55);
+  transform: scale(0);
+  animation: ripple 0.6s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+.btn-outline {
+  border: 1.5px solid var(--hair);
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+.btn-outline:hover {
+  border-color: var(--primary);
+  background: #fff;
+  transform: translateY(-2px);
+}
+.btn-ghost-light {
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  color: #fff;
+  background:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+.btn-ghost-light:hover {
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-2px);
+}
+/* ---------- Hero ---------- */
