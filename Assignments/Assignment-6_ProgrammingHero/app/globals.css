@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0b0d12;
+  --card: #151922;
+  --accent: #ccff00; /* button + highlight */
+  --heading: #ffffff;
+  --text: #9ca3af; /* paragraph */
+  --number: #9ca3af;
+  --btn-bg: #1a2312;
+  --btn-outline: #374151;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-card: var(--card);
+  --color-accent: var(--accent);
+  --color-heading: var(--heading);
+  --color-body: var(--text);
+  --color-number: var(--number);
+  --color-btn: var(--btn-bg);
+  --color-btn-outline: var(--btn-outline);
+
+  --font-heading: var(--font-oswald), sans-serif;
+  --font-inter: var(--font-inter), sans-serif;
+}
+html {
+  scroll-padding-top: 6rem;
+  scroll-behavior: smooth;
+}
+@layer base {
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font-inter), sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-oswald), sans-serif;
+    color: var(--heading);
+    text-transform: uppercase; /* ঐচ্ছিক: Oswald-এ সুন্দর দেখায় */
+    letter-spacing: 0.02em;
+  }
+
+  p {
+    font-family: var(--font-inter), sans-serif;
+    color: var(--text);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    background-color: var(--accent);
+    color: #000000;
+    font-size: 13px;
+    font-family: var(--font-inter);
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition:
+      transform 0.15s ease,
+      box-shadow 0.15s ease,
+      filter 0.15s ease;
+  }
+
+  .btn-primary:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 4px 14px 0 color-mix(in srgb, var(--accent) 45%, transparent);
+    transform: translateY(-1px);
+  }
+
+  .btn-primary:active {
+    transform: translateY(0);
+    filter: brightness(0.95);
+    box-shadow: 0 2px 6px 0 color-mix(in srgb, var(--accent) 35%, transparent);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: #e5e7eb;
+    font-size: 13px;
+    border: 1px solid var(--btn-outline);
+    padding: 12px 24px;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition:
+      background-color 0.15s ease,
+      border-color 0.15s ease,
+      transform 0.15s ease;
+  }
+
+  .btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+    border-color: #e5e7eb;
+    transform: translateY(-1px);
+  }
+
+  .btn-outline:active {
+    transform: translateY(0);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
