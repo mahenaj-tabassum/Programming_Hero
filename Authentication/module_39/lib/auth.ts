@@ -1,7 +1,4 @@
-import dns from "node:dns";
-
-dns.setServers(["8.8.8.8", "8.8.4.4"]);
-
+import "@/lib/dns";
 import { betterAuth } from "better-auth";
 import { MongoClient } from "mongodb";
 import { mongodbAdapter } from "@better-auth/mongo-adapter";
@@ -17,6 +14,19 @@ const client = new MongoClient(dbURL);
 const db = client.db("better-auth-module-40");
 
 export const auth = betterAuth({
+  socialProviders: {
+    google: {
+      clientId: process.env.BETTER_AUTH_GOOGLE_CLIENT_ID as string,
+      clientSecret: process.env.BETTER_AUTH_GOOGLE_CLIENT_SECRET as string,
+    },
+  },
+  account: {
+    accountLinking: {
+      enabled: true,
+      trustedProviders: ["google"],
+    },
+  },
+  baseURL: process.env.BETTER_AUTH_URL,
   emailAndPassword: {
     enabled: true,
   },

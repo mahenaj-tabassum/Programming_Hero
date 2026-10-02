@@ -103,8 +103,8 @@ export default function HomePage() {
           className="pointer-events-none absolute -right-24 -top-24 h-140 w-140 rounded-full bg-accent/10 blur-3xl"
         />
 
-        <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-5 py-16= lg:grid-cols-[1.1fr_1fr] lg:py-10">
-          <div>
+        <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-5 py-16 lg:grid-cols-[1.1fr_1fr] lg:py-10">
+          <div >
             <p className="rise flex items-center gap-2.5 text-xs font-medium uppercase tracking-[0.18em] text-muted">
               <span className="h-2 w-2 rounded-full bg-accent shadow-[0_0_12px_var(--color-accent)]" />
               Gatekeeper · Authentication

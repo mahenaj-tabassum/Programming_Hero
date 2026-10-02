@@ -86,6 +86,8 @@ type AuthShellProps = {
   onSubmit?: (e: React.FormEvent<HTMLFormElement>) => void;
   error?: string;
   loading?: boolean;
+  onGoogleSignIn?: () => void;
+  onGithubSignIn?: () => void;
 };
 
 export default function AuthShell({
@@ -99,6 +101,8 @@ export default function AuthShell({
   onSubmit,
   error,
   loading,
+  onGoogleSignIn,
+  onGithubSignIn,
 }: AuthShellProps) {
   const social =
     "rounded-lg border border-line bg-bg px-4 py-2.5 text-sm transition-colors hover:bg-white/5";
@@ -117,13 +121,15 @@ export default function AuthShell({
         <div className="mt-7 grid gap-3">
           <button
             type="button"
-            className={`${social} flex items-center justify-center gap-3`}
+            onClick={onGoogleSignIn}
+            className={`${social} flex items-center cursor-pointer justify-center gap-3`}
           >
             <FcGoogle size={20} /> Continue with Google
           </button>
           <button
             type="button"
-            className={`${social} flex items-center justify-center gap-3`}
+            onClick={onGithubSignIn}
+            className={`${social} flex items-center cursor-pointer justify-center gap-3`}
           >
             <FaGithub size={20} /> Continue with GitHub
           </button>

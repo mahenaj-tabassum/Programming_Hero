@@ -1,6 +1,7 @@
 "use client";
+
 import AuthShell, { Field } from "@/components/AuthShell";
-import { signUp } from "@/lib/auth-client";
+import { signIn, signUp } from "@/lib/auth-client";
 import React, { useState } from "react";
 
 export default function SignUp() {
@@ -9,22 +10,35 @@ export default function SignUp() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     setError("");
     setLoading(true);
+
     const form = new FormData(e.currentTarget);
     const data = Object.fromEntries(form.entries());
+
     const { error } = await signUp.email({
       name: data.name.toString(),
       email: data.email.toString(),
       password: data.password.toString(),
       callbackURL: "/",
     });
+
     setLoading(false);
+
     if (error) {
       setError(error.message ?? "Could not create your account. Try again");
       return;
     }
   };
+
+  const handleGoogleSignIn = async () => {
+    await signIn.social({
+      provider: "google",
+      callbackURL: "/",
+    });
+  };
+
   return (
     <AuthShell
       title="Create your account"
@@ -36,6 +50,7 @@ export default function SignUp() {
       onSubmit={handleSubmit}
       error={error}
       loading={loading}
+      onGoogleSignIn={handleGoogleSignIn}
     >
       <Field
         label="Name"
@@ -43,6 +58,7 @@ export default function SignUp() {
         placeholder="Your full name"
         autoComplete="name"
       />
+
       <Field
         label="Email"
         name="email"
@@ -50,6 +66,7 @@ export default function SignUp() {
         placeholder="you@example.com"
         autoComplete="email"
       />
+
       <Field
         label="Password"
         name="password"
