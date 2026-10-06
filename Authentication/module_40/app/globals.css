@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-inter: var(--font-inter), system-ui, sans-serif;
+  --font-newsReader: var(--font-newsReader), Georgia, serif;
+  --font-noto-bengali: var(--font-noto-bengali);
+}
+
+@theme {
+  --color-paper: #f8f8f6;
+  --color-ink: #111111;
+  --color-muted: #6b6b6b;
+  --color-line: #e4e4e0;
+  --color-accent: #2457ff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-inter);
+  -webkit-font-smoothing: antialiased;
+}
+.label {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.h-serif {
+  font-family: var(--font-newsReader);
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+}
+.ul {
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px
+    no-repeat;
+  transition: background-size 0.3s;
+}
+.ul:hover,
+ul[data-active="true"] {
+  background-size: 100% 1px;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee {
+  animation: marquee 40s linear infinite;
+}
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    animation: none;
+  }
+}
