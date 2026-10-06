@@ -22,7 +22,9 @@ export default function SignIn() {
     });
     setLoading(false);
     if (error) {
-      setError(error.message ?? "Could not create your account. Try again.");
+      setError(
+        error.message ?? "Server error. Unable to sign in. Please try again.",
+      );
       return;
     }
   };
