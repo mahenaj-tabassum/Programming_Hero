@@ -2,11 +2,12 @@
 
 import { signOut, useSession } from "@/lib/auth-client";
 import Link from "next/link";
+import { toast } from "react-toastify";
 
 const links = [
   ["Home", "/"],
   ["Docs", "https://better-auth.com/"],
-  ["GitHub", "#"],
+  ["Dashboard", "/dashboard"],
 ] as const;
 
 export default function Navbar() {
@@ -14,6 +15,7 @@ export default function Navbar() {
 
   const handleLogout = () => {
     signOut();
+    toast.error("Logout Successful!");
   };
 
   return (
@@ -25,7 +27,7 @@ export default function Navbar() {
         </Link>
 
         {/* Navigation Links */}
-        <div className="hidden items-center gap-6 md:flex">
+        <div className="hidden items-center gap-6 sm:flex">
           {links.map(([label, href]) => (
             <Link
               key={label}
@@ -35,6 +37,19 @@ export default function Navbar() {
               {label}
             </Link>
           ))}
+
+          {session?.user ? (
+            <>
+              <Link
+                href="/profile"
+                className="text-sm text-muted transition-colors hover:text-ink"
+              >
+                Profile
+              </Link>
+            </>
+          ) : (
+            <></>
+          )}
         </div>
 
         {/* Authentication */}

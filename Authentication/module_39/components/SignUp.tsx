@@ -3,6 +3,7 @@
 import AuthShell, { Field } from "@/components/AuthShell";
 import { signIn, signUp } from "@/lib/auth-client";
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 export default function SignUp() {
   const [error, setError] = useState("");
@@ -28,14 +29,30 @@ export default function SignUp() {
 
     if (error) {
       setError(error.message ?? "Could not create your account. Try again");
+      toast.error("Could not create your account. Try again");
       return;
     }
+    toast.success("Account created successfully!");
   };
 
   const handleGoogleSignIn = async () => {
+    toast.info("Logging in with google...");
     await signIn.social({
       provider: "google",
       callbackURL: "/",
+    });
+  };
+  const handleGithubSignIn = async () => {
+    toast.info("Logging in with github...");
+
+    await signIn.social({
+      provider: "github",
+    });
+  };
+  const handleDiscordSignIn = async () => {
+    toast.info("Logging in with discord...");
+    await signIn.social({
+      provider: "discord",
     });
   };
 
@@ -51,6 +68,8 @@ export default function SignUp() {
       error={error}
       loading={loading}
       onGoogleSignIn={handleGoogleSignIn}
+      onGithubSignIn={handleGithubSignIn}
+      onDiscordSignIn={handleDiscordSignIn}
     >
       <Field
         label="Name"

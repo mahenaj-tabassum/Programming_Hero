@@ -3,6 +3,7 @@ import Link from "next/link";
 import AuthShell, { Field } from "@/components/AuthShell";
 import React, { useState } from "react";
 import { signIn } from "@/lib/auth-client";
+import { toast } from "react-toastify";
 
 export default function SignIn() {
   const [error, setError] = useState("");
@@ -28,6 +29,26 @@ export default function SignIn() {
       return;
     }
   };
+  const handleGoogleSignIn = async () => {
+    toast.info("Logging in with google...");
+    await signIn.social({
+      provider: "google",
+      callbackURL: "/",
+    });
+  };
+  const handleGithubSignIn = async () => {
+    toast.info("Logged in with github...");
+
+    await signIn.social({
+      provider: "github",
+    });
+  };
+  const handleDiscordSignIn = async () => {
+    toast.info("Logging in with discord...");
+    await signIn.social({
+      provider: "discord",
+    });
+  };
 
   return (
     <AuthShell
@@ -40,6 +61,9 @@ export default function SignIn() {
       onSubmit={handleSubmit}
       loading={loading}
       error={error}
+      onGoogleSignIn={handleGoogleSignIn}
+      onGithubSignIn={handleGithubSignIn}
+      onDiscordSignIn={handleDiscordSignIn}
     >
       <Field
         label="Email"

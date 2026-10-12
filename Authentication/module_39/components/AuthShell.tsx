@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState, type ReactNode } from "react";
+import { BsDiscord } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 
@@ -88,6 +89,7 @@ type AuthShellProps = {
   loading?: boolean;
   onGoogleSignIn?: () => void;
   onGithubSignIn?: () => void;
+  onDiscordSignIn?: () => void
 };
 
 export default function AuthShell({
@@ -103,6 +105,7 @@ export default function AuthShell({
   loading,
   onGoogleSignIn,
   onGithubSignIn,
+  onDiscordSignIn
 }: AuthShellProps) {
   const social =
     "rounded-lg border border-line bg-bg px-4 py-2.5 text-sm transition-colors hover:bg-white/5";
@@ -132,6 +135,13 @@ export default function AuthShell({
             className={`${social} flex items-center cursor-pointer justify-center gap-3`}
           >
             <FaGithub size={20} /> Continue with GitHub
+          </button>
+          <button
+            type="button"
+            onClick={onDiscordSignIn}
+            className={`${social} flex items-center cursor-pointer justify-center gap-3`}
+          >
+            <BsDiscord size={20} /> Continue with Discord
           </button>
         </div>
 

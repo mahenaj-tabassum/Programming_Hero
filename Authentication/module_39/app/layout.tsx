@@ -1,6 +1,7 @@
 import { Bricolage_Grotesque, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { ToastContainer } from "react-toastify";
 
 const display = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -19,6 +20,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-screen">
         <Navbar />
         {children}
+
+        <ToastContainer position="bottom-right"/>
       </body>
     </html>
   );

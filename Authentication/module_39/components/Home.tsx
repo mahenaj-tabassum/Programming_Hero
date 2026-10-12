@@ -104,7 +104,7 @@ export default function HomePage() {
         />
 
         <div className="relative mx-auto grid max-w-6xl items-center gap-14 px-5 py-16 lg:grid-cols-[1.1fr_1fr] lg:py-10">
-          <div >
+          <div>
             <p className="rise flex items-center gap-2.5 text-xs font-medium uppercase tracking-[0.18em] text-muted">
               <span className="h-2 w-2 rounded-full bg-accent shadow-[0_0_12px_var(--color-accent)]" />
               Gatekeeper · Authentication
@@ -132,7 +132,7 @@ export default function HomePage() {
               className="rise mt-10 flex flex-col gap-3 sm:flex-row"
             >
               <Link
-                href="/signup"
+                href="/sign-up"
                 className="inline-flex h-12 items-center justify-center rounded-xl bg-accent px-6 text-sm font-semibold text-bg transition duration-200 hover:-translate-y-0.5 hover:brightness-110"
               >
                 Create an account
