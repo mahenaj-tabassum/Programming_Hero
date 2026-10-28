@@ -1,0 +1,28 @@
+Working with POST:
+1. create a POST api
+2. app.use(cors())
+3. app.use(express.json())
+On client Side
+1. Send Fetch request
+2. async await onSubmit
+3. Send data to a request body
+4. method:POST
+headers:
+body: JSON.stringify() // for this we need to use express.json(
+)
+req.body
+
+
+
+1. What is server?
+2. What is API
+3. get, post, patch, put
+4. What is Node?
+5. What is Express?
+6. Difference between JS and Node
+7. How to create basic server with Express
+8. npm init -y
+9. Follow express js docs
+
+
+
