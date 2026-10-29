@@ -1,0 +1,23 @@
+Staring A Backend
+
+1. npm init -y
+2. npm install express
+3. npm install cors
+
+
+1. আগে পুরো backend-এর কাজ বুঝে নাও
+তোমার backend-কে একটি রেস্টুরেন্টের সঙ্গে তুলনা করো। 🍽️
+
+- Routes: কোন কাউন্টারে কোন অর্ডার নেওয়া হবে?
+- Controllers: কাস্টমারের request বুঝে কী response দেওয়া হবে?
+- Services: অর্ডারটি কী নিয়মে প্রসেস করা হবে?
+- Models: খাবার ও অর্ডারের তথ্য কীভাবে database-এ রাখা হবে?
+- Config: Database-এর সঙ্গে connection কীভাবে তৈরি হবে?
+- Middlewares: Request-এর মাঝখানে কী কী পরীক্ষা করতে হবে?
+- Utils: বারবার কাজে লাগে এমন ছোট helper functions।
+- App: Express application কীভাবে সাজানো হবে?
+- Server: Application কীভাবে চালু হবে?
+
+
+In mongodb we won't give or provide id to data database. because mongodb
+generates unique _id for every document in the collection
