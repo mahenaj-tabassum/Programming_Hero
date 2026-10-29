@@ -21,3 +21,5 @@ Staring A Backend
 
 In mongodb we won't give or provide id to data database. because mongodb
 generates unique _id for every document in the collection
+
+NEXT_PUBLIC_API_URL=http://localhost:5000
